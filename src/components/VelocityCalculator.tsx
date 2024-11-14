@@ -4,12 +4,13 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { AlertTriangle, Settings, Activity } from 'lucide-react';
 
+/* eslint-disable react/no-unescaped-entities */
 const VelocityTimeCalculator = () => {
   const [currentVelocity, setCurrentVelocity] = useState(55);
   const REFERENCE_VELOCITY = 60;
   const TOTAL_DISTANCE = 100;
 
-  const calculateRiskAndTime = (velocity) => {
+  const calculateRiskAndTime = (velocity: number) => {
     const timeInMinutes = (TOTAL_DISTANCE / velocity) * 60;
     const referenceTimeInMinutes = (TOTAL_DISTANCE / REFERENCE_VELOCITY) * 60;
     const velocityDifference = velocity - REFERENCE_VELOCITY;
@@ -152,7 +153,7 @@ const VelocityTimeCalculator = () => {
                 <div className="bg-white/50 rounded-lg p-3">
                   <div className="text-gray-700">Risco de acidente fatal</div>
                   <div className="text-2xl font-bold text-red-600">
-                    {calculatedValues.fatalRisk > 0 ? '+' : ''}
+                    {parseFloat(calculatedValues.fatalRisk) > 0 ? '+' : ''}
                     {calculatedValues.fatalRisk}%
                   </div>
                   <div className="text-sm text-gray-600">4% para cada 1% acima de 60 km/h</div>
@@ -272,5 +273,6 @@ const VelocityTimeCalculator = () => {
     </div>
   );
 };
+/* eslint-enable react/no-unescaped-entities */
 
 export default VelocityTimeCalculator;
