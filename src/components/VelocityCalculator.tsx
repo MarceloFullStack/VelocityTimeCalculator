@@ -100,7 +100,7 @@ const VelocityTimeCalculator = () => {
             <div>
               <h3 className="font-semibold">Por que criei esta calculadora?</h3>
               <p className="text-sm">
-                "Baseado em um estudo que mostrou que dirigir agressivamente por 1609 km economizou apenas 31 minutos (3%), mas triplicou os riscos."
+                &quot;Baseado em um estudo que mostrou que dirigir agressivamente por 1609 km economizou apenas 31 minutos (3%), mas triplicou os riscos.&quot;
               </p>
             </div>
           </div>
